@@ -148,6 +148,8 @@ module ActsAsTaggableOn::Taggable
                       owned_by.id,
                       owned_by.class.base_class.to_s
                   ])
+          else
+              tagging_join << " AND #{taggings_alias}.tagger_id is NULL"
           end
 
           joins << tagging_join
@@ -172,6 +174,8 @@ module ActsAsTaggableOn::Taggable
                     owned_by.id,
                     owned_by.class.base_class.to_s
                   ])
+            else
+                tagging_join << " AND #{taggings_alias}.tagger_id is NULL"
             end
 
             joins << tagging_join

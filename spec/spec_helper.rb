@@ -1,5 +1,6 @@
 $LOAD_PATH << "." unless $LOAD_PATH.include?(".")
 require 'logger'
+require 'active_support/all'
 
 begin
   require "rubygems"
